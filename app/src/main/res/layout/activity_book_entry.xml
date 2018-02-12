@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/coor_layout"
+    tools:context="com.afomic.diary.BookEntryActivity">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"/>
+    </android.support.design.widget.AppBarLayout>
+    <RelativeLayout
+        android:id="@+id/empty_view"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:src="@drawable/list"
+            android:layout_centerInParent="true"
+            android:layout_width="100dp"
+            android:id="@+id/imv_empty"
+            android:layout_height="100dp"/>
+        <TextView
+            android:gravity="center"
+            android:layout_below="@id/imv_empty"
+            android:text="Empty Entry"
+            android:padding="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/rv_entry_list"
+        android:layout_height="match_parent"/>
+    <LinearLayout
+        android:id="@+id/bottom_sheet_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:behavior_hideable="true"
+        android:gravity="center"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        android:elevation="16dp"
+        android:background="@color/colorWhite">
+        <ImageView
+            android:id="@+id/imv_play_entry"
+            android:src="@drawable/ic_play_arrow"
+            android:layout_width="64dp"
+            android:layout_height="64dp"/>
+
+    </LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="8dp"
+        android:id="@+id/fab_record"
+        android:src="@drawable/ic_record_voice"
+        app:layout_anchorGravity="bottom|right|end"
+        android:layout_height="wrap_content"/>
+
+</android.support.design.widget.CoordinatorLayout>
